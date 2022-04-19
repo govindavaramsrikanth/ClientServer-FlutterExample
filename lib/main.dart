@@ -33,7 +33,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   String serverResponse = 'Server response';
-  String ipAddress = '192.168.29.73';
+  String ipAddress = 'localhost';
   int portNo = 3000;
 
   @override
@@ -108,9 +108,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
   String _localhost() {
     String port = portNo.toString();
-    if (Platform.isAndroid)
-      return "http://$ipAddress:$port"; //InternetAddress.anyIPv6.address;//InternetAddress.anyIPv4.address;
-    else // for iOS simulator
-      return 'http://localhost:3000';
+    return "http://$ipAddress:$port";
+    // if (Platform.isAndroid)
+    //   return "http://$ipAddress:$port"; //InternetAddress.anyIPv6.address;//InternetAddress.anyIPv4.address;
+    // else // for iOS simulator
+    //   return 'http://localhost:3000';
   }
 }
